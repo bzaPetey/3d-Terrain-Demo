@@ -35,7 +35,7 @@ ssao_enabled = true
 [sub_resource type="Curve3D" id=5]
 bake_interval = 0.05
 _data = {
-"points": PoolVector3Array( 0, 0, -0.25, 0, 0, 0.25, 0, 0, 0, -0.430229, 2.17141, -2.93736, 0.430229, -2.17141, 2.93736, -0.968506, -1.43129, 6.54095, -0.00787354, 0.956528, -0.560089, 0.00787354, -0.956528, 0.560089, -3.49991, -11.7679, 27.7959, -0.107361, 1.2287, -1.19287, 0.107361, -1.2287, 1.19287, -4.78885, -22.9769, 39.5486, 0.0289289, 1.67663, -1.87809, -0.0289289, -1.67663, 1.87809, -4.23367, -22.9222, 55.3276, -0.00799976, 4.02054, 0.519342, 0.00799976, -4.02054, -0.519342, -13.9038, -37.3863, 59.2356, 0.430796, -0.819521, -1.41883, -0.430796, 0.819521, 1.41883, -17.3826, -42.9933, 78.558 ),
+"points": PoolVector3Array( 0, 0, -0.25, 0, 0, 0.25, 0, -5.62611, 0, -0.430229, 2.17141, -2.93736, 0.430229, -2.17141, 2.93736, -0.813629, -6.93617, 16.4211, -0.00787354, 0.956528, -0.560089, 0.00787354, -0.956528, 0.560089, -1.40097, -28.7333, 23.512, -0.107361, 1.2287, -1.19287, 0.107361, -1.2287, 1.19287, -4.78894, -32.2882, 39.5482, 0.0289289, 1.67663, -1.87809, -0.0289289, -1.67663, 1.87809, -4.23367, -47.0409, 55.3276, -0.00799976, 4.02054, 0.519342, 0.00799976, -4.02054, -0.519342, -8.10355, -93.7438, 91.639, 6.5351, -0.819519, -1.15442, -6.5351, 0.819519, 1.15442, -8.22308, -88.267, 102.503 ),
 "tilts": PoolRealArray( 0, 0, 0, 0, 0, 0, 0 )
 }
 
@@ -144,6 +144,53 @@ baking_foam_offset = 0.1
 baking_foam_blur = 0.02
 curve = SubResource( 5 )
 widths = [ 5.10324, 4.79105, 17.7352, 16.9717, 11.8688, 16.9923, 9.53674e-07 ]
+valid_flowmap = false
+flow_foam_noise = null
+dist_pressure = null
+_material = SubResource( 6 )
+_selected_shader = 0
+_uv2_sides = 0
+
+[node name="River2" type="Spatial" parent="."]
+transform = Transform( 0.267676, 0, -0.963509, 0, 1, 0, 0.963509, 0, 0.267676, 499.408, 154.917, 125.779 )
+script = ExtResource( 12 )
+shape_step_length_divs = 1
+shape_step_width_divs = 1
+shape_smoothness = 0.5
+mat_shader_type = 0
+mat_custom_shader = null
+mat_normal_scale = 1.0
+mat_normal_bump_texture = ExtResource( 14 )
+mat_uv_scale = Vector3( 1, 1, 1 )
+mat_roughness = 0.2
+mat_edge_fade = 0.25
+mat_albedo_color = Transform( 0, 0.15, 0, 0.8, 0.2, 0, 1, 0.5, 0, 0, 0, 0 )
+mat_albedo_depth = 10.0
+mat_albedo_depth_curve = 0.25
+mat_transparency_clarity = 10.0
+mat_transparency_depth_curve = 0.25
+mat_transparency_refraction = 0.05
+mat_flow_speed = 1.0
+mat_flow_base = 0.0
+mat_flow_steepness = 2.0
+mat_flow_distance = 1.0
+mat_flow_pressure = 1.0
+mat_flow_max = 4.0
+mat_foam_color = Color( 0.9, 0.9, 0.9, 1 )
+mat_foam_amount = 2.0
+mat_foam_steepness = 2.0
+mat_foam_smoothness = 0.3
+lod_lod0_distance = 50.0
+baking_resolution = 2
+baking_raycast_distance = 10.0
+baking_raycast_layers = 1
+baking_dilate = 0.6
+baking_flowmap_blur = 0.04
+baking_foam_cutoff = 0.9
+baking_foam_offset = 0.1
+baking_foam_blur = 0.02
+curve = SubResource( 5 )
+widths = [ 5.10324, 4.79105, 17.7352, 16.9717, 11.8688, 21.8105, 9.53674e-07 ]
 valid_flowmap = false
 flow_foam_noise = null
 dist_pressure = null
